@@ -4,6 +4,8 @@ import * as actions from './actions/groupListActions'
 import { Dispatch } from 'react'
 import { serverAL } from '../api/api'
 
+
+
 type GroupsActionTypes = ReturnType<getActionTypes<typeof actions>>
 
 const init: mainGroupListType = {
@@ -17,11 +19,19 @@ const init: mainGroupListType = {
       groupProfile: 'load',
       calendar: [
         {
-          id: 'load',
-          groupId: 'load',
-          title: 'load',
-          date: 'load',
+          id: '1',
+          groupId: '1',
+          title: 'Lection1',
+          date: '2021-06-07',
+          start: '2021-06-07T16:10:00'
         },
+        {
+          id: '2',
+          groupId: '1',
+          title: 'Lection2',
+          date: '2021-06-01',
+          start: '2021-06-01T15:20:00'
+        }
       ],
 
       mentor: {

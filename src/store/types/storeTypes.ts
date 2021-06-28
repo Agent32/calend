@@ -18,6 +18,7 @@ export type calendarType = {
   groupId: string
   title: string
   date: string
+  start:string
 }
 
 
