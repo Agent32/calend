@@ -1,10 +1,10 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux'
 
 import thunk from 'redux-thunk' //thunk middleware
-import countryListReducer from './countryListReducer'
+import { groupsListReducer } from './groupListReducer'
 
 const reducersPush = combineReducers({
-  countiesCovidPart: countryListReducer,
+  groupsPart: groupsListReducer,
  
 })
 

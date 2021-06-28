@@ -1,16 +1,20 @@
 import "./App.css";
-import MainCountryListContainer from "./components/pages/mainCounrtyList/mainCountryListContainer";
 import { Route, Switch, Redirect } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { NavBarDrawer } from "./components/pages/navBar/navBarDrawer";
+import { GroupListMainContainer } from "./components/pages/groups/groupsListContainer";
 
 function App() {
+  
   return (
     <div className="App">
+
+      <NavBarDrawer/>
       <Switch>
-        <Redirect exact from="/" to="/countries" />
+        <Redirect exact from="/" to="/groups" />
 
 
-        <Route path="/countries" component={MainCountryListContainer} />
+        <Route path="/groups" component={GroupListMainContainer} />
       </Switch>
     </div>
   );

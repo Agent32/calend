@@ -1,33 +1,30 @@
-export type countriesStatCovidType = {
-  ID: string
-  Country: string
-  CountryCode: string
-  Slug: string
-  NewConfirmed: number
-  TotalConfirmed: number
-  NewDeaths: number
-  TotalDeaths: number
-  NewRecovered: number
-  TotalRecovered: number
-  Date: string
-  Premium: null
+export type getActionTypes<T> = T extends { [key: string]: infer U } ? U : never
+
+
+//-------------------------------------
+export type person = {
+  id: string
+  classification: 'intern' | 'mentor' | 'lector'
+  firstName: string
+  lastName: string
+  email: string
+  phone: string
+  room: string
 }
 
-type countryListSettingType = {
-  test: string
+export type groupType = {
+  id: string
+  name: string
+  avatar: string
+  startDate: string
+  gitLink: string
+  groupProfile: string
+  mentor: person
+  userList: Array<person>
 }
 
-
-
-export type mainCountryListType = {
-  Countries: Array<countriesStatCovidType>
-  mainCounrtySettings: countryListSettingType
-}
-
-export type serverResponse = {
-  ID: string
-  Message: string
-  Global: any
-  Countries: Array<countriesStatCovidType>
-  Date: string
+export type mainGroupListType =
+  {
+    groups: Array<groupType>,
+    groupsSettings: {test:string}
 }

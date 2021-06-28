@@ -1,0 +1,30 @@
+$tableDivider: 5fr 5fr;
+$tableClass: 'table info';
+
+
+.main {
+    display: grid;
+    grid-template-areas: $tableClass;
+    grid-template-columns: $tableDivider;
+    justify-items: start;
+
+  .table
+  {
+    grid-area: table;
+
+    .ListGroup {
+     padding: 5px;
+     .item{
+       width: 120px;
+     }
+    }
+
+  }
+
+
+  .detailInfo
+  {
+    grid-area: info;
+    width: 550px;
+  }
+}
