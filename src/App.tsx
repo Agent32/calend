@@ -1,7 +1,7 @@
 import "./App.css";
 import { Route, Switch, Redirect } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { NavBarDrawer } from "./components/pages/navBar/navBarDrawer";
+import { NavBarDrawer } from "./components/navBar/navBarDrawer";
 import { GroupListMainContainer } from "./components/pages/groups/groupsListContainer";
 
 function App() {

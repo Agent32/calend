@@ -12,6 +12,14 @@ export type person = {
   img: string
   room: string
 }
+//-------------------------------------
+export type calendarType = {
+  id: string
+  groupId: string
+  title: string
+  date: string
+}
+
 
 export type groupType = {
   id: string
@@ -20,6 +28,7 @@ export type groupType = {
   startDate: string
   gitLink: string
   groupProfile: string
+  calendar: Array<calendarType>
   mentor: person
   userList: Array<person>
 }

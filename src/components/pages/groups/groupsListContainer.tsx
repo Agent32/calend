@@ -4,7 +4,6 @@ import { getGroupsListTC } from "../../../store/groupListReducer";
 
 import { globalStateType } from "../../../store/store";
 import { GroupListDrawer } from "./groupListDrawer";
-import interactionPlugin from "@fullcalendar/interaction"
 
 const mapStateToProps = (state: globalStateType) => {
   return {

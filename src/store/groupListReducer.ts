@@ -15,6 +15,14 @@ const init: mainGroupListType = {
       startDate: 'load',
       gitLink: 'load',
       groupProfile: 'load',
+      calendar: [
+        {
+          id: 'load',
+          groupId: 'load',
+          title: 'load',
+          date: 'load',
+        },
+      ],
 
       mentor: {
         id: 'load',
@@ -35,7 +43,7 @@ const init: mainGroupListType = {
           email: 'string',
           phone: 'string',
           room: 'string',
-          img: 'pick'
+          img: 'pick',
         },
       ],
     },
@@ -72,7 +80,7 @@ export const getGroupsListTC =
   () => async (dispatch: Dispatch<GroupsActionTypes>) => {
     try {
       const groupAnswData = await serverAL.getGroupList()
-      
+
       dispatch(actions.setGroupList(groupAnswData))
     } catch (err) {
       console.log(err)

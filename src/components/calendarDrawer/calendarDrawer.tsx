@@ -4,11 +4,11 @@ import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 
 import interactionPlugin from "@fullcalendar/interaction"
 
+import calendarStyle from "./calendarStyle.module.scss";
 
-export function CalendarDrawer(props:any)
-{
+export function CalendarDrawer(props: any) {
   let eventGuid = 0;
-  const TODAY_STR = new Date().toISOString().replace(/T.*$/, ''); // YYYY-MM-DD of today
+
   function createEventId() {
     return String(eventGuid++);
   }
@@ -30,21 +30,23 @@ export function CalendarDrawer(props:any)
     }
   }
 
- const  handleDateClick = (arg:DatePointApi) => { // bind with an arrow function
-    alert(arg.dateStr)
-  }
+  /*  const handleDateClick = (arg: DatePointApi) => { 
+     alert(arg.dateStr)
+   } */
   return (
-    <FullCalendar
-    plugins={[ dayGridPlugin, interactionPlugin]}
-    initialView="dayGridMonth"
-            weekends={false}
-            editable={true}
-            selectable={true}
-            dayMaxEvents={true}
-            select={handleDateSelect}
-          
-            
-    events={props.event}
-  />
+    <div className={calendarStyle.main}>
+      <FullCalendar
+        plugins={[dayGridPlugin, interactionPlugin]}
+        initialView="dayGridMonth"
+        weekends={false}
+        editable={true}
+        selectable={true}
+        dayMaxEvents={true}
+        select={handleDateSelect}
+
+
+        events={props.event}
+      />
+    </div>
   )
 }

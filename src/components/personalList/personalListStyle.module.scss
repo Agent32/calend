@@ -1,0 +1,21 @@
+
+
+.main {
+ 
+display: flex;
+flex-wrap: wrap;
+width: 800px;
+margin-top: 10px;
+
+div {
+
+}
+
+
+div + div{
+  margin-right: 10px;
+  
+}
+
+ 
+}
