@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { groupType, serverResponse } from '../store/types/storeTypes'
+import { groupType} from '../store/types/storeTypes'
 
 //import { invoiceType } from '../store/types/storeTypes';
 //https://mockapi.io/projects/60d5f509943aa60017768d24
@@ -10,19 +10,11 @@ const instanceMock = axios.create({
 })
 
 type serverType = {
-  getCountiesCovidList: Function
   getGroupList: Function
 }
 
 export const serverAL: serverType = {
-  getCountiesCovidList: () => {
-    return instanceMock
-      .get<serverResponse>(``)
-
-      .then((res) => {
-        return res.data.Countries
-      })
-  },
+ 
   getGroupList: () => {
     return instanceMock.get<Array<groupType>>('/groups').then((res) => {
       return res.data

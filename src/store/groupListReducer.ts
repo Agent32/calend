@@ -24,6 +24,7 @@ const init: mainGroupListType = {
         email: 'string',
         phone: 'string',
         room: 'string',
+        img: 'pick',
       },
       userList: [
         {
@@ -34,6 +35,7 @@ const init: mainGroupListType = {
           email: 'string',
           phone: 'string',
           room: 'string',
+          img: 'pick'
         },
       ],
     },

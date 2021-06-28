@@ -9,6 +9,7 @@ export type person = {
   lastName: string
   email: string
   phone: string
+  img: string
   room: string
 }
 

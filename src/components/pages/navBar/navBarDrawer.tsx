@@ -4,11 +4,11 @@ export function NavBarDrawer(props:any)
 {
   return(
       <Navbar bg="dark" variant="dark">
-    <Navbar.Brand href="#">Wut</Navbar.Brand>
+    <Navbar.Brand href="#"> Intern management System </Navbar.Brand>
     <Nav className="mr-auto">
       <Nav.Link href="#groups">Groups</Nav.Link>
-      <Nav.Link href="#interns">Interns</Nav.Link>
-      <Nav.Link href="#lections">Lections</Nav.Link>
+      <Nav.Link href="#bib">Functional</Nav.Link>
+      <Nav.Link href="#did">Functional</Nav.Link>
     </Nav>
   
   </Navbar>
