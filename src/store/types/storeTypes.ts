@@ -27,10 +27,10 @@ export type groupType = {
   name: string
   avatar: string
   startDate: string
-  gitLink: string
+  endDate:string
   groupProfile: string
   calendar: Array<calendarType>
-  mentor: person
+  mentor: string
   userList: Array<person>
 }
 

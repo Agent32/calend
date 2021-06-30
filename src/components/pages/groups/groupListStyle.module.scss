@@ -5,6 +5,20 @@
 display: flex;
 justify-content: center;
 flex-direction: column;
- 
+width: auto;
+margin: 20px;
 
+ 
+.groupAva{
+    display: flex;
+justify-content: center;
+  
+    img{
+        width: 100px;
+        height: 100px;
+        border-radius: 100px; 
+        border: 1px solid gray; 
+    }
+
+}
 }

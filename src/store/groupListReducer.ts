@@ -15,7 +15,7 @@ const init: mainGroupListType = {
       name: 'bor',
       avatar: 'link',
       startDate: 'load',
-      gitLink: 'load',
+      endDate: 'load',
       groupProfile: 'load',
       calendar: [
         {
@@ -34,16 +34,7 @@ const init: mainGroupListType = {
         }
       ],
 
-      mentor: {
-        id: 'load',
-        classification: 'mentor',
-        firstName: 'string',
-        lastName: 'string',
-        email: 'string',
-        phone: 'string',
-        room: 'string',
-        img: 'pick',
-      },
+      mentor: 'load',
       userList: [
         {
           id: 'load',

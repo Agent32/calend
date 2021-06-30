@@ -3,7 +3,7 @@ import { connect, ConnectedProps } from "react-redux";
 import { getGroupsListTC } from "../../../store/groupListReducer";
 
 import { globalStateType } from "../../../store/store";
-import { GroupListDrawer } from "./groupListDrawer";
+import { CalendarAndJornalDrawer } from "./groupListDrawer";
 
 const mapStateToProps = (state: globalStateType) => {
   return {
@@ -22,7 +22,7 @@ function GroupListCC(props: groupListConectedType) {
 
 
 
-  return <GroupListDrawer {...props} />;
+  return <CalendarAndJornalDrawer {...props} />;
 }
 
 // ========================================

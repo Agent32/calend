@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { ListGroup,Table } from "react-bootstrap";
+import { ListGroup, Table } from "react-bootstrap";
 
 import groupListStyle from "./groupListStyle.module.scss";
 import { groupListConectedType } from "./groupsListContainer";
@@ -28,67 +28,47 @@ export const GroupListDrawer = (props: groupListConectedType) => {
     return (null)
   }
 
-  const tableHeader = (
-    <ListGroup horizontal={'lg'} >
-      <ListGroup.Item variant="warning">Group name</ListGroup.Item>
-      <ListGroup.Item variant="warning">Start Date</ListGroup.Item>
-      <ListGroup.Item variant="warning"> Git Link </ListGroup.Item>
-      <ListGroup.Item variant="warning">Group Profile</ListGroup.Item>
-      <ListGroup.Item variant="warning">Events</ListGroup.Item>
-      <ListGroup.Item variant="warning">Group list</ListGroup.Item>
-    </ListGroup>)
+
 
   const groupList = props.groupList.map(current => {
+    debugger
     return (
 
-      <ListGroup horizontal={'lg'} key={current.id} >
-        <ListGroup.Item variant="primary">{current.name}</ListGroup.Item>
-        <ListGroup.Item variant="secondary">{current.startDate.slice(0, 10)}</ListGroup.Item>
-        <ListGroup.Item variant="secondary"> {current.gitLink}  </ListGroup.Item>
-        <ListGroup.Item variant="secondary">{current.groupProfile}</ListGroup.Item>
-        <ListGroup.Item onClick={() => handleCalendarClick(current.calendar)} action variant="info">Events</ListGroup.Item>
-        <ListGroup.Item onClick={() => handleGrouopClick(current.userList)} action variant="info" >Group list</ListGroup.Item>
-      </ListGroup>
+      <tr key={current.id} >
+
+        <td className={groupListStyle.groupAva} ><img src={current.avatar} alt='ava' /></td>
+        <td>{current.name}</td>
+        <td>{current.mentor}</td>
+        <td> {current.startDate.slice(0, 10)} </td>
+        <td> {current.endDate.slice(0, 10)}</td>
+        <td>{current.groupProfile}</td>
+
+      </tr>
 
 
     )
   })
 
-  const table = [tableHeader, ...groupList]
 
   return (
     <div className={groupListStyle.main}>
 
-<Table striped bordered hover size="sm">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td colSpan={2}>Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</Table>
-      {table}
+      <Table striped bordered hover size="sm" >
+        <thead>
+          <tr>
+            <th>Avatar</th>
+            <th>Group name</th>
+            <th>Mentor</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Сourse</th>
+          </tr>
+        </thead>
+        <tbody>
+          {groupList}
+        </tbody>
+      </Table>
+
 
     </div>
   );
