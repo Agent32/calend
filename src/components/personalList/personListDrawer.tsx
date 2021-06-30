@@ -2,7 +2,7 @@ import { Card } from "react-bootstrap";
 import { person } from "../../store/types/storeTypes";
 import personalListStyle from "./personalListStyle.module.scss";
 type withData<Type> = { data: Type }
-
+// <PersonListDrawer data={personeList}
 export const PersonListDrawer = (props: withData<Array<person>>) => {
   const personeListDrawer = props.data.map((current) => {
     return (

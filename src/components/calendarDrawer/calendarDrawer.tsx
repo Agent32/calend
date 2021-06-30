@@ -5,7 +5,7 @@ import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import interactionPlugin from "@fullcalendar/interaction"
 
 import calendarStyle from "./calendarStyle.module.scss";
-
+//<CalendarDrawer event={eventEmulator} 
 export function CalendarDrawer(props: any) {
   let eventGuid = 0;
 
