@@ -5,10 +5,8 @@ import { ListGroup, Table } from "react-bootstrap";
 import groupListStyle from "./groupListStyle.module.scss";
 import { groupListConectedType } from "./groupsListContainer";
 
-
-import { CalendarDrawer } from "../../calendarDrawer/calendarDrawer";
 import { calendarType, person } from "../../../store/types/storeTypes";
-import { PersonListDrawer } from "../../personalList/personListDrawer";
+
 
 
 export const GroupListDrawer = (props: groupListConectedType) => {
@@ -34,7 +32,7 @@ export const GroupListDrawer = (props: groupListConectedType) => {
     debugger
     return (
 
-      <tr key={current.id} >
+      <tr key={current.id}  >
 
         <td className={groupListStyle.groupAva} ><img src={current.avatar} alt='ava' /></td>
         <td>{current.name}</td>

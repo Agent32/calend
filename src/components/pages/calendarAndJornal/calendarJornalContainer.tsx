@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { connect, ConnectedProps } from "react-redux";
-import { getGroupsListTC } from "../../../store/groupListReducer";
 
 import { globalStateType } from "../../../store/store";
-import { CalendarAndJornalDrawer } from "./groupListDrawer";
+import { groupListConectedType } from "../groups/groupsListContainer";
+import { CalendarAndJornalDrawer } from "./calendarJornalDrawer";
 
 const mapStateToProps = (state: globalStateType) => {
   return {
@@ -11,13 +11,11 @@ const mapStateToProps = (state: globalStateType) => {
   }
 };
 
-const connector = connect(mapStateToProps, { getGroupsListTC })
-export type groupListConectedType = ConnectedProps<typeof connector>
+const connector = connect(mapStateToProps, {})
 
 function GroupListCC(props: groupListConectedType) {
 
   useEffect(() => {
-    props.getGroupsListTC();
   }, []);
 
 
@@ -28,6 +26,6 @@ function GroupListCC(props: groupListConectedType) {
 // ========================================
 
 
-export const GroupListMainContainer = connector(GroupListCC);
+export const JournalMainContainer = connector(GroupListCC);
 
 
