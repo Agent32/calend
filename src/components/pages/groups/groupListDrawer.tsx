@@ -30,7 +30,7 @@ export const GroupListDrawer = (props: groupListConectedType) => {
 
 
 
-  const groupList = props.groupList.map(current => {
+/*   const groupList = props.groupList.map(current => {
     debugger
     return (
 
@@ -47,7 +47,7 @@ export const GroupListDrawer = (props: groupListConectedType) => {
 
 
     )
-  })
+  }) */
 
   const shit = ['Avatar', 'Group name', 'Mentor', 'Start Date', 'End Date', 'Сourse']
   
