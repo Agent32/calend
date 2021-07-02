@@ -94,7 +94,7 @@ export const GroupListDrawer = (props: groupListConectedType) => {
 {/*       <Table striped bordered hover size="sm" >
         <thead> // /////
           <tr>////
-            <th>Avatar</th>
+            <th>Avatar</th>  ///test
             <th>Group name</th>
             <th>Mentor</th>
             <th>Start Date</th>
