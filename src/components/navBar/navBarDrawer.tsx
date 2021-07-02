@@ -7,7 +7,7 @@ export function NavBarDrawer(props:any)
     <Navbar.Brand href="#"> Intern management System </Navbar.Brand>
     <Nav className="mr-auto">
       <Nav.Link href="#groups">Groups</Nav.Link>
-      <Nav.Link href="#bib">Functional</Nav.Link>
+      <Nav.Link href="#journal">Journal and Calendar</Nav.Link>
       <Nav.Link href="#did">Functional</Nav.Link>
     </Nav>
   

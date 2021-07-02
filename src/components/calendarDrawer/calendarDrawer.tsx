@@ -5,6 +5,7 @@ import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import interactionPlugin from "@fullcalendar/interaction"
 
 import calendarStyle from "./calendarStyle.module.scss";
+
 //<CalendarDrawer event={eventEmulator} 
 export function CalendarDrawer(props: any) {
   let eventGuid = 0;
@@ -35,6 +36,8 @@ export function CalendarDrawer(props: any) {
    } */
   return (
     <div className={calendarStyle.main}>
+ 
+      
       <FullCalendar
         plugins={[dayGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
@@ -43,8 +46,10 @@ export function CalendarDrawer(props: any) {
         selectable={true}
         dayMaxEvents={true}
         select={handleDateSelect}
-
-
+        themeSystem={'bootstrap'}
+        height = {650}
+        
+        
         events={props.event}
       />
     </div>

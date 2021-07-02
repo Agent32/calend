@@ -1,13 +1,15 @@
 
 import { useState } from "react";
-import { ListGroup, Table } from "react-bootstrap";
+/* import { ListGroup, Table } from "react-bootstrap"; */
 
 import groupListStyle from "./groupListStyle.module.scss";
 import { groupListConectedType } from "./groupsListContainer";
 
 import { calendarType, person } from "../../../store/types/storeTypes";
-
-
+import Button from '@material-ui/core/Button';
+import { DataGrid } from '@material-ui/data-grid';
+import { GridColDef } from "@material-ui/data-grid";
+import { GridValueGetterParams ,} from "@material-ui/data-grid";
 
 export const GroupListDrawer = (props: groupListConectedType) => {
 
@@ -47,11 +49,49 @@ export const GroupListDrawer = (props: groupListConectedType) => {
     )
   })
 
+  const shit = ['Avatar', 'Group name', 'Mentor', 'Start Date', 'End Date', 'Сourse']
+  
+  const columns: GridColDef[] = [
+    { field: 'name', headerName: 'Group name', width: 120 },
+    {
+      field: 'mentor',
+      headerName: 'Mentor',
+      description:
+        'Name of the mentor.',
+      width: 160,
+      
+    },
+    {
+      field: 'startDate',
+      headerName: 'Start Date',
+      type: 'dateTime',
+      width: 160,
+    },
+    {
+      field: 'endDate',
+      headerName: 'End Date',
+      type: 'dateTime',
+      width: 160,
+    },
+    {
+      field: 'groupProfile',
+      headerName: 'Сourse',
+      description: 'This column has a value getter and is not sortable.',
+      sortable: false,
+      width: 160,
+    },
+  ];
+
+ 
+
 
   return (
     <div className={groupListStyle.main}>
 
-      <Table striped bordered hover size="sm" >
+<DataGrid rows={props.groupList} columns={columns} pageSize={5}  />
+      
+     
+{/*       <Table striped bordered hover size="sm" >
         <thead>
           <tr>
             <th>Avatar</th>
@@ -62,10 +102,11 @@ export const GroupListDrawer = (props: groupListConectedType) => {
             <th>Сourse</th>
           </tr>
         </thead>
+        
         <tbody>
           {groupList}
         </tbody>
-      </Table>
+      </Table> */}
 
 
     </div>
