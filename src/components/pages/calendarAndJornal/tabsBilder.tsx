@@ -12,8 +12,19 @@ import { ListenedLections } from './listenedLections';
 
 import { CalendarDrawer } from "../../calendarDrawer/calendarDrawer";
 
+type tabProps = {
+  tabLable: string,
+  object: any
+}
 
-export const TableDrawer = (props: any) => {
+type TableProps = {
+  tabs: Array<tabProps>
+}
+
+
+
+
+export const TableDrawer = (props: TableProps) => {
   const useStyles = makeStyles((theme) => ({
     root: {
       '& .MuiTabs-root': {
@@ -39,8 +50,8 @@ export const TableDrawer = (props: any) => {
         {...other}
       >
         {value === index && (
-          <Box p={3}>
-            <Typography>{children}</Typography>
+          <Box m={1}> 
+            {children}
           </Box>
         )}
       </div>
@@ -69,25 +80,46 @@ export const TableDrawer = (props: any) => {
     setValue(newValue);
   };
 
-  
+  const resultTabs = props.tabs.map((current, numb) => {
+    return (
+      <Tab label={current.tabLable} {...a11yProps(numb)} key={numb} />
+    )
+  })
+  const resultTabpanel = props.tabs.map((current, numb) => {
+    return (
+      <TabPanel value={value} index={numb}>
+        {current.object}
+      </TabPanel>
 
+
+    )
+  })
+
+{/* <Tab label="Calendar" {...a11yProps(0)} />
+<Tab label="Journal" {...a11yProps(1)} />
+<Tab label="Group List" {...a11yProps(2)} />
+</Tabs>
+<TabPanel value={value} index={0}>
+<ListenedLections />
+{/*  <CalendarDrawer event={props.groupList[0].calendar} /> 
+</TabPanel>
+<TabPanel value={value} index={1}>
+Journal
+</TabPanel>
+<TabPanel value={value} index={2}>
+Group List
+</TabPanel> */}
+  
   return (
     <Paper className={classes.root}>
-      <Tabs value={value} onChange={handleChange} aria-label="group tabs">
-        <Tab label="Calendar" {...a11yProps(0)} />
-        <Tab label="Journal" {...a11yProps(1)} />
-        <Tab label="Group List" {...a11yProps(2)} />
+      <Tabs value={value}
+        onChange={handleChange}
+        variant="scrollable"
+        scrollButtons="auto"
+        aria-label="group tabs">
+{resultTabs}
       </Tabs>
-      <TabPanel value={value} index={0}>
-       <ListenedLections />
-         {/*  <CalendarDrawer event={props.groupList[0].calendar} /> */}
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Journal
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Group List
-      </TabPanel>
+{resultTabpanel}
     </Paper>
 
 
