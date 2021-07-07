@@ -32,7 +32,7 @@ export const CalendarAndJornalDrawer = (props: groupListConectedType) => {
         </Box>)
     }, {
       tabLable: 'Journal',
-      object: (<div> Ne sosvem raspidarasilo</div>)
+      object: (<div> Ne sosvem rabotaet</div>)
     }
   ]
 
