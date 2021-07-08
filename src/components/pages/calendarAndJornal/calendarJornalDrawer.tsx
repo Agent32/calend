@@ -26,13 +26,13 @@ export const CalendarAndJornalDrawer = (props: groupListConectedType) => {
             <ListenedLections /> </Box>
 
           <Box>     <CalendarDrawer event={props.groupList[0].calendar} /></Box>
-          <Button variant="contained" color="primary" onClick={addTable}>
-            Primary
-          </Button>
+        
         </Box>)
     }, {
       tabLable: 'Journal',
-      object: (<div> Ne sosvem rabotaet</div>)
+      object: (<div>   <Button variant="contained" color="primary" onClick={addTable}>
+      Add new tab
+    </Button></div>)
     }
   ]
 
