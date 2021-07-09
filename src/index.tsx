@@ -7,7 +7,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { CssBaseline } from '@material-ui/core';
-
+import 'antd/dist/antd.css';
 
 
 ReactDOM.render(

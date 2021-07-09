@@ -5,6 +5,7 @@ import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import interactionPlugin from "@fullcalendar/interaction"
 
 import calendarStyle from "./calendarStyle.module.scss";
+import { Calendar } from 'antd';
 
 //<CalendarDrawer event={eventEmulator} 
 export function CalendarDrawer(props: any) {
@@ -31,6 +32,11 @@ export function CalendarDrawer(props: any) {
     }
   }
 
+  function onPanelChange(value:any, mode:any) {
+    alert(value);
+  }
+  
+
   /*  const handleDateClick = (arg: DatePointApi) => { 
      alert(arg.dateStr)
    } */
@@ -38,7 +44,7 @@ export function CalendarDrawer(props: any) {
     <div className={calendarStyle.main}>
  
       
-      <FullCalendar
+   {/*    <FullCalendar
         plugins={[dayGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
         weekends={false}
@@ -51,7 +57,8 @@ export function CalendarDrawer(props: any) {
         
         
         events={props.event}
-      />
+      /> */}
+<Calendar onPanelChange={onPanelChange} />
     </div>
   )
 }

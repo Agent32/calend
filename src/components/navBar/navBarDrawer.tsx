@@ -2,6 +2,13 @@
 import { AppBar, Container, Typography, Breadcrumbs, Link } from '@material-ui/core';
 import { emphasize, makeStyles } from '@material-ui/core/styles';
 
+
+import { Breadcrumb } from 'antd';
+import { HomeOutlined, UserOutlined } from '@ant-design/icons';
+
+
+import nawBarStyle from "./nawBarStyle.module.scss";
+
 export function NavBarDrawer(props: any) {
 
   const useStyles = makeStyles((theme) => ({
@@ -27,7 +34,7 @@ export function NavBarDrawer(props: any) {
 
 
   return (
-    <AppBar position='static' className={classes.colorDefault}>
+   /*  <AppBar position='static' className={classes.colorDefault}>
       <Container fixed>
         <Typography variant='h6'>  Intern management System</Typography>
         <Breadcrumbs aria-label="breadcrumb">
@@ -43,6 +50,17 @@ export function NavBarDrawer(props: any) {
         </Breadcrumbs>
 
       </Container>
-    </AppBar>
+    </AppBar> */
+    <Breadcrumb className={nawBarStyle.main}>
+      <h4> Intern management System </h4>
+    <Breadcrumb.Item href="/">
+      <HomeOutlined />
+    </Breadcrumb.Item>
+    <Breadcrumb.Item href="#groups">
+    <span> 
+      Groups</span>
+    </Breadcrumb.Item >
+    <Breadcrumb.Item href="#journal"><span>Journal</span></Breadcrumb.Item>
+  </Breadcrumb> 
   )
 }

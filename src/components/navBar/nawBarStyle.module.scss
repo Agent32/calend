@@ -1,0 +1,22 @@
+
+
+.main {
+ 
+background-color: black;
+color:white;
+
+span{
+  color:white;
+ 
+}
+span::first-child{
+  color:red;
+}
+span:hover{
+  color:orange;
+}
+span:active{
+  color:orange;
+}
+
+}
