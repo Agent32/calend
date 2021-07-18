@@ -4,7 +4,6 @@ import { emphasize, makeStyles } from '@material-ui/core/styles';
 
 
 import { Breadcrumb } from 'antd';
-import { HomeOutlined, UserOutlined } from '@ant-design/icons';
 
 
 import nawBarStyle from "./nawBarStyle.module.scss";
@@ -54,7 +53,6 @@ export function NavBarDrawer(props: any) {
     <Breadcrumb className={nawBarStyle.main}>
       <h4> Intern management System </h4>
     <Breadcrumb.Item href="/">
-      <HomeOutlined />
     </Breadcrumb.Item>
     <Breadcrumb.Item href="#groups">
     <span> 
